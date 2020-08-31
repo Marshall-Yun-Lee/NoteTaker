@@ -35,12 +35,41 @@ app.post('/create', (req, res) => {
 })
 
 // delete - delete
+app.delete('/delete', (req, res) => {
+	// params: target, callback
+	Data.findOneAndDelete({
+		_id: req.get("id")
+	}, (err) => {
+		if (err !== null) {
+			console.log("error shown: " + err)
+			res.send("failed to delete!")
+		}
+	})
+	res.send("deleted")
+})
 
 // update - put
+app.put('/update', (req, res) => {
+	// params: targetToUpdate, newContent, callback
+	Data.findByIdAndUpdate({
+		_id: req.get("id")
+	}, {
+		title: req.get("title"),
+		date: req.get("date"),
+		note: req.get("note")
+	}, (err) => {
+		if (err !== null) {
+			console.log("failed to update: " + err)
+			res.send("failed to update!")
+		}
+	})
+	res.send("updated")
+})
+
 
 // fetch - get
 app.get('/fetch', (req, res) => {
-	Data.find().then((DBitems) => {
+	Data.find({}).then((DBitems) => {
 		res.send(DBitems)
 	})
 })
