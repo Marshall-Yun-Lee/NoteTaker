@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		3036631F24FCC4BA00DD939A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3036631D24FCC4BA00DD939A /* Main.storyboard */; };
 		3036632124FCC4BB00DD939A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3036632024FCC4BB00DD939A /* Assets.xcassets */; };
 		3036632424FCC4BB00DD939A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3036632224FCC4BB00DD939A /* LaunchScreen.storyboard */; };
+		30EAD5432500276C00D9B757 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 30EAD5422500276C00D9B757 /* Alamofire */; };
+		30EAD545250027EA00D9B757 /* APIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EAD544250027EA00D9B757 /* APIFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		3036632024FCC4BB00DD939A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3036632324FCC4BB00DD939A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3036632524FCC4BB00DD939A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30EAD544250027EA00D9B757 /* APIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30EAD5432500276C00D9B757 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 				3036632024FCC4BB00DD939A /* Assets.xcassets */,
 				3036632224FCC4BB00DD939A /* LaunchScreen.storyboard */,
 				3036632524FCC4BB00DD939A /* Info.plist */,
+				30EAD544250027EA00D9B757 /* APIFunctions.swift */,
 			);
 			path = NoteTaker;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = NoteTaker;
+			packageProductDependencies = (
+				30EAD5422500276C00D9B757 /* Alamofire */,
+			);
 			productName = NoteTaker;
 			productReference = 3036631424FCC4BA00DD939A /* NoteTaker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 3036630B24FCC4BA00DD939A;
+			packageReferences = (
+				30EAD5412500276C00D9B757 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3036631524FCC4BA00DD939A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30EAD545250027EA00D9B757 /* APIFunctions.swift in Sources */,
 				3036631C24FCC4BA00DD939A /* ViewController.swift in Sources */,
 				3036631824FCC4BA00DD939A /* AppDelegate.swift in Sources */,
 				3036631A24FCC4BA00DD939A /* SceneDelegate.swift in Sources */,
@@ -340,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30EAD5412500276C00D9B757 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30EAD5422500276C00D9B757 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30EAD5412500276C00D9B757 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3036630C24FCC4BA00DD939A /* Project object */;
 }
