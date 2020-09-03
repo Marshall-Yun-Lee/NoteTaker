@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-//        cell.textLabel?.text = notes[indexPath.row]
+        cell.textLabel?.text = notes[indexPath.row].title
         return cell
     }
     
@@ -47,5 +47,6 @@ extension ViewController: DataDelegate {
         } catch {
             print("Failed to decode json")
         }
+        self.notesTableView?.reloadData()
     }
 }

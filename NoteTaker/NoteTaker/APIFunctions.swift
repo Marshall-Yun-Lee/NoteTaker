@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct Note {
+struct Note: Decodable {
     var _id: String
     var title: String
     var date: String
@@ -26,7 +26,7 @@ class APIFunctions {
             print(response.data!)
             let data = String(data: response.data!, encoding: .utf8)
             
-            self.delegate?.updateNotes(newArray: data)
+            self.delegate?.updateArray(newArray: data!)
         }
     }
 }
