@@ -10,6 +10,20 @@ import UIKit
 
 class AddNoteViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var noteTextField: UITextView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
+    @IBAction func saveNote(_ sender: Any) {
+        APIFunctions.functions.addNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!)
+        print("saved")
+    }
+    
+    @IBAction func deleteNote(_ sender: Any) {
+        print("deleted")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Controller connected")
