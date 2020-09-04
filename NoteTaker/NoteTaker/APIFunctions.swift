@@ -17,7 +17,6 @@ struct Note: Decodable {
 }
 
 class APIFunctions {
-    
     var delegate: DataDelegate?
     static let functions = APIFunctions()
     
@@ -27,6 +26,12 @@ class APIFunctions {
             let data = String(data: response.data!, encoding: .utf8)
             
             self.delegate?.updateArray(newArray: data!)
+        }
+    }
+    
+    func addNote(title: String, date: String, note: String) {
+        AF.request("http://10.0.0.26:8080/create", method: .post, encoding: URLEncoding.httpBody, headers: ["title": title, "date": date, "note": note]).responseJSON { response in
+            //
         }
     }
 }
