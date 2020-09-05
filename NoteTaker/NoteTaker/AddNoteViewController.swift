@@ -18,10 +18,13 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     @IBAction func saveNote(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "yyyy-MM-dd"
+        let date = dateFormatter.string(from: Date())
         if update {
-            APIFunctions.functions.updateNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!, id: note!._id)
+            APIFunctions.functions.updateNote(title: titleTextField.text!, date: date, note: noteTextField.text!, id: note!._id)
         } else {
-            APIFunctions.functions.addNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!)
+            APIFunctions.functions.addNote(title: titleTextField.text!, date: date, note: noteTextField.text!)
         }
         self.navigationController?.popViewController(animated: true)
     }

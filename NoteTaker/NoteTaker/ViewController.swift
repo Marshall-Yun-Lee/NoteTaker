@@ -14,7 +14,8 @@ protocol DataDelegate {
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var notes = [Note]()
-    
+    var refreshControl: UIRefreshControl!
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddNoteViewController
         
@@ -29,8 +30,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-        cell.textLabel?.text = notes[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! NoteTableViewCell
+        cell.title.text = notes[indexPath.row].title
+        cell.note.text = notes[indexPath.row].note
+        cell.date.text = notes[indexPath.row].date
         return cell
     }
     
@@ -52,7 +55,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         notesTableView.delegate = self
         notesTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.notesTableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        APIFunctions.functions.fetchNotes()
+        refreshControl.endRefreshing()
+
     }
 }
 

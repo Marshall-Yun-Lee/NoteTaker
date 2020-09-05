@@ -17,18 +17,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8OS-f5-0MC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8OS-f5-0MC">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="m86-qH-T3T">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="88" id="m86-qH-T3T" customClass="NoteTableViewCell" customModule="NoteTaker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m86-qH-T3T" id="rV6-ph-PvB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="woi-oY-iqk">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="88"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzK-fD-17h">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="29.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWU-CP-N9B">
+                                                            <rect key="frame" x="0.0" y="29.5" width="374" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFR-Cf-TUr">
+                                                            <rect key="frame" x="0.0" y="58.5" width="374" height="29.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="woi-oY-iqk" secondAttribute="bottom" id="0NC-B7-Z5Y"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="top" secondItem="rV6-ph-PvB" secondAttribute="top" id="4HX-MR-okq"/>
+                                                <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="10" id="4uu-qV-FlR"/>
+                                                <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="20" id="8OC-bZ-iJX"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="top" secondItem="rV6-ph-PvB" secondAttribute="top" id="9tI-0d-HeM"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="10" id="Rkp-kO-k30"/>
+                                                <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="20" id="Y9c-l3-JNd"/>
+                                                <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" id="blN-uG-Z4x"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="20" id="hbV-NE-4qR"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" id="nqI-Kn-JcC"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="20" id="tu7-w7-sp5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="date" destination="wFR-Cf-TUr" id="Vz5-M7-t9r"/>
+                                            <outlet property="note" destination="eWU-CP-N9B" id="Plg-aY-DpE"/>
+                                            <outlet property="title" destination="VzK-fD-17h" id="A4Y-U7-HHZ"/>
                                             <segue destination="LFM-Ls-CQ4" kind="show" identifier="noteDetailsSegue" id="4el-so-ytu"/>
                                         </connections>
                                     </tableViewCell>

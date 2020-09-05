@@ -22,9 +22,8 @@ class APIFunctions {
     
     func fetchNotes() {
         AF.request("http://10.0.0.26:8080/fetch").response { response in
-            print(response.data!)
             let data = String(data: response.data!, encoding: .utf8)
-            
+
             self.delegate?.updateArray(newArray: data!)
         }
     }
