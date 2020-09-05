@@ -26,7 +26,7 @@ app.post('/create', (req, res) => {
 
 	note.save().then(() => {
 		if (note.isNew === false) {
-			console.log("note saved!")
+			console.log("saved: " + note)
 			res.send("saved")
 		} else {
 			console.log("failed to save note")

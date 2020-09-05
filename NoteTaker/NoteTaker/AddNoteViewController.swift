@@ -9,6 +9,8 @@
 import UIKit
 
 class AddNoteViewController: UIViewController {
+    var note: Note?
+    var update: Bool = false
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
@@ -16,19 +18,32 @@ class AddNoteViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     @IBAction func saveNote(_ sender: Any) {
-        APIFunctions.functions.addNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!)
-        print("saved")
+        if update {
+            APIFunctions.functions.updateNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!, id: note!._id)
+        } else {
+            APIFunctions.functions.addNote(title: titleTextField.text!, date: "Placeholder", note: noteTextField.text!)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteNote(_ sender: Any) {
-        print("deleted")
+        APIFunctions.functions.deleteNote(id: note!._id)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if !update {
+            self.deleteButton.isEnabled = false
+            self.deleteButton.title = ""
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Controller connected")
-
-        // Do any additional setup after loading the view.
+        if update {
+            titleTextField.text = note!.title
+            noteTextField.text = note!.note
+        }
     }
     
 
