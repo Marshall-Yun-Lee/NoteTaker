@@ -23,10 +23,11 @@ class AddNoteViewController: UIViewController {
         let date = dateFormatter.string(from: Date())
         if update {
             APIFunctions.functions.updateNote(title: titleTextField.text!, date: date, note: noteTextField.text!, id: note!._id)
-        } else {
+            self.navigationController?.popViewController(animated: true)
+        } else if (titleTextField.text != "" && noteTextField.text != "") {
             APIFunctions.functions.addNote(title: titleTextField.text!, date: date, note: noteTextField.text!)
+            self.navigationController?.popViewController(animated: true)
         }
-        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteNote(_ sender: Any) {
@@ -48,16 +49,4 @@ class AddNoteViewController: UIViewController {
             noteTextField.text = note!.note
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,14 +8,12 @@
 
 import UIKit
 
-protocol DataDelegate {
-    func updateArray(newArray: String)
-}
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var notes = [Note]()
     var refreshControl: UIRefreshControl!
+    @IBOutlet weak var notesTableView: UITableView!
 
+    // MARK: - Segue data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddNoteViewController
         
@@ -25,21 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! NoteTableViewCell
-        cell.title.text = notes[indexPath.row].title
-        cell.note.text = notes[indexPath.row].note
-        cell.date.text = notes[indexPath.row].date
-        return cell
-    }
-    
-    
-    @IBOutlet weak var notesTableView: UITableView!
-    
+    // MARK: - Lifecycle hooks
     override func viewWillAppear(_ animated: Bool) {
         APIFunctions.functions.fetchNotes()
     }
@@ -65,8 +49,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func refresh(_ sender: AnyObject) {
         APIFunctions.functions.fetchNotes()
         refreshControl.endRefreshing()
-
     }
+    
+    // MARK: - table delegates
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! NoteTableViewCell
+        cell.title.text = notes[indexPath.row].title
+        cell.note.text = notes[indexPath.row].note
+        cell.date.text = notes[indexPath.row].date
+        return cell
+    }
+    
+    
+}
+
+// MARK: - custom delegates
+protocol DataDelegate {
+    func updateArray(newArray: String)
 }
 
 extension ViewController: DataDelegate {

@@ -29,22 +29,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="woi-oY-iqk">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="88"/>
+                                                    <rect key="frame" x="20" y="0.0" width="394" height="88"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzK-fD-17h">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWU-CP-N9B">
-                                                            <rect key="frame" x="0.0" y="29.5" width="374" height="29"/>
+                                                            <rect key="frame" x="0.0" y="29.5" width="394" height="29"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFR-Cf-TUr">
-                                                            <rect key="frame" x="0.0" y="58.5" width="374" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="58.5" width="394" height="29.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -57,10 +57,12 @@
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="top" secondItem="rV6-ph-PvB" secondAttribute="top" id="4HX-MR-okq"/>
                                                 <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="10" id="4uu-qV-FlR"/>
                                                 <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="20" id="8OC-bZ-iJX"/>
+                                                <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="30" id="9By-2H-Men"/>
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="top" secondItem="rV6-ph-PvB" secondAttribute="top" id="9tI-0d-HeM"/>
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="10" id="Rkp-kO-k30"/>
                                                 <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" constant="20" id="Y9c-l3-JNd"/>
                                                 <constraint firstAttribute="trailing" secondItem="woi-oY-iqk" secondAttribute="trailing" id="blN-uG-Z4x"/>
+                                                <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="30" id="fFn-SY-iNd"/>
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="20" id="hbV-NE-4qR"/>
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" id="nqI-Kn-JcC"/>
                                                 <constraint firstItem="woi-oY-iqk" firstAttribute="leading" secondItem="rV6-ph-PvB" secondAttribute="leading" constant="20" id="tu7-w7-sp5"/>
